@@ -1,0 +1,149 @@
+/* ====VARIABLES==== */
+:root{
+    /* Colors */
+    --font-color:black;
+    --bg-color:white;
+    --special-color:rgb(179, 176, 42);
+}
+
+/* ====GLOBAL SETTINGS==== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--font-color);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+/* ====HEADER==== */
+header{
+    padding: 0 4px;
+    height: 60px;
+    border-bottom: 3px solid var(--font-color);
+    box-shadow: 0 3px 0 var(--special-color);
+    display: flex;
+    justify-content: space-between;
+}
+.head-col-left, .head-col-right{
+    display: flex;
+    align-items: center;
+}
+.head-logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.head-image{
+    height: 40px;
+}
+.site-name{
+    margin-left: 6px;
+    font-size: 1.8em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.base-nav{
+    align-items: center;
+    display: flex;
+}
+.bn-item{
+    margin-left: 6px;
+    padding: 4px 8px;
+    border: 3px solid var(--font-color);
+    font-size: 1.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition:all 0.1s;
+    box-shadow: 3px 3px 0 var(--special-color);
+}
+.bn-item:hover{
+    background-color: var(--special-color);
+    color: var(--bg-color);
+}
+/* DROPDOWN MENU */
+.burger-nav{
+    display: none;
+}
+.burger-img-container{
+    display: flex;
+    align-items: center;
+}
+.burger-img{
+    height: 50px;
+}
+.dropdown-menu{
+    height: 100vh;
+    background-color: var(--bg-color);
+    border-left: 3px solid var(--font-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+.dm-item{
+    padding: 4px 8px 4px 20px;
+    font-size: 1.7em;
+    text-decoration: none;
+}
+.burger-nav:hover .dropdown-menu{
+    display: flex;
+}
+/* ====MAIN==== */
+main{
+    padding: 30px 4px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.card{
+    margin: 0 6px;
+    max-width: 320px;
+    padding: 20px 26px;
+    border: 3px solid var(--font-color);
+    box-shadow: 3px 3px 0 var(--special-color);
+}
+.card h3{
+    font-size: 1.2em;
+}
+.card hr{
+    margin: 8px 0;
+    height: 2px;
+    background-color: var(--special-color);
+}
+
+
+/* ====ADAPTIVE STYLES==== */
+
+
+
+@media screen and (max-width:750px){
+    /* body{background-color: red;} пример изменения сайта при уменьшении страницы*/
+
+    /* ====HEADER==== */
+    .base-nav{
+        display: none;
+    }
+    .burger-nav{
+        display: block;
+    }
+
+    /* ====MAIN==== */
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        margin:8px;
+        max-width: 500px;
+    }
+    .card h3{
+        text-align: center;
+    }
+}
